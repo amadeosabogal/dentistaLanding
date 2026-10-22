@@ -1,20 +1,23 @@
-import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import BookingModal from './components/BookingModal';
+import FloatingWhatsAppBtn from './components/FloatingWhatsAppBtn';
+import { openWhatsApp } from './utils/whatsapp';
+
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleBookClick = (customMessage) => {
+    openWhatsApp(typeof customMessage === 'string' ? customMessage : undefined);
+  };
 
   return (
     <div className="app">
-      <Navbar onBookClick={() => setIsModalOpen(true)} />
+      <Navbar onBookClick={handleBookClick} />
       <Routes>
-        <Route path="/" element={<Home onBookClick={() => setIsModalOpen(true)} />} />
+        <Route path="/" element={<Home onBookClick={handleBookClick} />} />
       </Routes>
-      <Footer />
-      {isModalOpen && <BookingModal onClose={() => setIsModalOpen(false)} />}
+      <Footer onBookClick={handleBookClick} />
+      <FloatingWhatsAppBtn />
     </div>
   );
 }

@@ -1,6 +1,9 @@
 import { useRef } from 'react';
-import { ChevronLeft, ChevronRight, Star, ArrowUpRight, ArrowRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import BeforeAfterSection from '../components/BeforeAfterSection';
+import MedicalCredentialsSection from '../components/MedicalCredentialsSection';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -35,22 +38,22 @@ function Home({ onBookClick }) {
   return (
     <>
       {/* Hero Section */}
-      <motion.section 
+      <motion.section
         id="home"
-        className="hero" 
-        style={{backgroundImage: 'url("https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")'}}
+        className="hero"
+        style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")' }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
         <div className="hero-content">
-          <motion.div 
+          <motion.div
             className="hero-title-container"
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
           >
-            <motion.h1 variants={fadeInUp} className="hero-title">Odontología<br/>Moderna con<br/>Cuidado Amable.</motion.h1>
+            <motion.h1 variants={fadeInUp} className="hero-title">Odontología<br />Moderna con<br />Cuidado Amable.</motion.h1>
             <motion.div variants={fadeInUp} className="hero-right-info">
               <p className="hero-subtitle">Atención dental experta para sonrisas saludables y seguras a cualquier edad, brindada con comodidad, precisión y confianza.</p>
               <div className="slider-controls">
@@ -63,7 +66,7 @@ function Home({ onBookClick }) {
             </motion.div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="hero-bottom"
             variants={staggerContainer}
             initial="hidden"
@@ -83,7 +86,7 @@ function Home({ onBookClick }) {
                 <h4>Dr. Jonas Suherman</h4>
                 <p>Odontología Pediátrica</p>
                 <div className="doctor-rating">
-                  7 años de Experiencia <span style={{color: '#666'}}>(Calificación 4.8)</span>
+                  7 años de Experiencia <span style={{ color: '#666' }}>(Calificación 4.8)</span>
                 </div>
               </div>
             </motion.div>
@@ -93,7 +96,7 @@ function Home({ onBookClick }) {
 
       {/* Services Section */}
       <section id="services" className="services-section">
-        <motion.div 
+        <motion.div
           className="section-header"
           initial="hidden"
           whileInView="visible"
@@ -102,7 +105,7 @@ function Home({ onBookClick }) {
         >
           <motion.div variants={fadeInUp}>
             <span className="section-subtitle">Nuestras Características /</span>
-            <h2 className="section-title">Descubre Nuestros Servicios<br/>Dentales Exclusivos</h2>
+            <h2 className="section-title">Descubre Nuestros Servicios<br />Dentales Exclusivos</h2>
           </motion.div>
           <motion.div variants={fadeInUp}>
             <p className="section-desc">
@@ -111,7 +114,7 @@ function Home({ onBookClick }) {
           </motion.div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="services-content"
           initial="hidden"
           whileInView="visible"
@@ -130,12 +133,12 @@ function Home({ onBookClick }) {
                 <p>Reseñas</p>
               </div>
             </div>
-            
+
             <div>
               <p className="review-text">Descubre reseñas de pacientes encantados sobre su experiencia de atención dental reconfortante y satisfactoria.</p>
               <div className="nav-buttons">
-                <button className="nav-btn" onClick={() => scrollCarousel('left')}><ChevronLeft size={20}/></button>
-                <button className="nav-btn" onClick={() => scrollCarousel('right')}><ChevronRight size={20}/></button>
+                <button className="nav-btn" onClick={() => scrollCarousel('left')}><ChevronLeft size={20} /></button>
+                <button className="nav-btn" onClick={() => scrollCarousel('right')}><ChevronRight size={20} /></button>
               </div>
             </div>
           </motion.div>
@@ -144,19 +147,19 @@ function Home({ onBookClick }) {
             <motion.div variants={scaleIn} className="service-card">
               <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=400&q=80" alt="Limpieza Dental" />
               <div className="service-info">
-                <h3>Limpieza<br/>Dental</h3>
+                <h3>Limpieza<br />Dental</h3>
               </div>
             </motion.div>
             <motion.div variants={scaleIn} className="service-card">
               <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=400&q=80" alt="Chequeos Dentales" />
               <div className="service-info">
-                <h3>Chequeos<br/>Dentales</h3>
+                <h3>Chequeos<br />Dentales</h3>
               </div>
             </motion.div>
             <motion.div variants={scaleIn} className="service-card">
               <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=400&q=80" alt="Carillas Dentales" />
               <div className="service-info">
-                <h3>Carillas<br/>Dentales</h3>
+                <h3>Carillas<br />Dentales</h3>
               </div>
             </motion.div>
             <motion.div variants={scaleIn} className="service-card">
@@ -168,7 +171,7 @@ function Home({ onBookClick }) {
             <motion.div variants={scaleIn} className="service-card">
               <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=400&q=80" alt="Implantes Dentales" />
               <div className="service-info">
-                <h3>Implantes<br/>Dentales</h3>
+                <h3>Implantes<br />Dentales</h3>
               </div>
             </motion.div>
             <motion.div variants={scaleIn} className="service-card">
@@ -181,87 +184,76 @@ function Home({ onBookClick }) {
         </motion.div>
       </section>
 
+      {/* Interactive Before & After Showcase */}
+      <BeforeAfterSection onBookClick={onBookClick} />
+
+      {/* Medical Specialists Credentials Section */}
+      <MedicalCredentialsSection onBookClick={onBookClick} />
+
       {/* About Section */}
       <section id="about" className="about-section">
-        <motion.div 
+        <motion.div
           className="about-grid"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
         >
-          <motion.div variants={fadeInUp} className="about-image">
-            <motion.img 
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.6 }}
-              src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" 
-              alt="Dentista y paciente" 
+          <div className="about-image">
+            <motion.img
+              whileHover={{ scale: 1.03 }}
+              transition={{ duration: 0.5 }}
+              src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80"
+              alt="Instalaciones clínicas NovaDent"
             />
-          </motion.div>
-          
-          <motion.div variants={fadeInUp} className="about-content">
-            <span className="section-subtitle">Sobre Dentalia /</span>
-            <h2 className="section-title">Excelencia en<br/>Odontología con<br/>Atención Compasiva</h2>
-            <p className="section-desc" style={{marginTop: '24px'}}>
-              Descubre reseñas de pacientes encantados sobre su experiencia de atención dental reconfortante y satisfactoria.
+          </div>
+
+          <div className="about-content">
+            <span className="section-subtitle">Sobre NovaDent /</span>
+            <h2 className="section-title">Odontología de Vanguardia,<br />Tecnología 3D y Cuidado Humano</h2>
+            <p className="section-desc" style={{ marginTop: '18px' }}>
+              En NovaDent combinamos más de una década de experiencia clínica con equipamiento odontológico digital de última generación. Nuestro compromiso es brindarte diagnósticos exactos, tratamientos indoloros y resultados estéticos naturales.
             </p>
-            
-            <button className="read-more-btn">
-              Leer más
-              <ArrowUpRight size={16} />
-            </button>
-            
-            <motion.div variants={staggerContainer} className="doctors-cards">
-              <motion.div variants={scaleIn} className="doc-small-card">
-                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80" alt="Dr. Albert Flores" />
-                <div className="doc-info">
-                  <div>
-                    <h4>Dr. Albert Flores</h4>
-                    <p>Odontología Pediátrica</p>
-                  </div>
-                  <div className="service-arrow"><ArrowUpRight size={14}/></div>
-                </div>
-              </motion.div>
-              <motion.div variants={scaleIn} className="doc-small-card">
-                <img src="/dra_theresa.jpg" alt="Dr. Theresa Webb" />
-                <div className="doc-info">
-                  <div>
-                    <h4>Dra. Theresa Webb</h4>
-                    <p>Odontología Pediátrica</p>
-                  </div>
-                  <div className="service-arrow"><ArrowUpRight size={14}/></div>
-                </div>
-              </motion.div>
-            </motion.div>
-          </motion.div>
+
+            <div className="about-features-row">
+              <div className="about-feature-box">
+                <h4>Diagnóstico Digital 3D</h4>
+                <p>Escaneo intraoral de alta precisión para planificar tu tratamiento antes de tocar el primer diente.</p>
+              </div>
+              <div className="about-feature-box">
+                <h4>Tratamientos Sin Dolor</h4>
+                <p>Técnicas mínimamente invasivas con anestesia computarizada y sedación consciente certificada.</p>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="stats-row"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={staggerContainer}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
         >
           <motion.div variants={fadeInUp} className="stat-item">
             <h2>98%</h2>
-            <p>Tasa de<br/>Satisfacción</p>
+            <p>Tasa de<br />Satisfacción</p>
           </motion.div>
           <motion.div variants={fadeInUp} className="stat-item">
             <h2>50K</h2>
-            <p>Sonrisas<br/>Transformadas</p>
+            <p>Sonrisas<br />Transformadas</p>
           </motion.div>
           <motion.div variants={fadeInUp} className="stat-item">
             <h2>4.9</h2>
-            <p>Calificación<br/>de Clientes</p>
+            <p>Calificación<br />de Clientes</p>
           </motion.div>
         </motion.div>
       </section>
 
       {/* Testimonials Section */}
       <section id="testimonials" className="testimonials-section">
-        <motion.div 
-          className="section-header" 
+        <motion.div
+          className="section-header"
           style={{ marginBottom: '40px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}
           initial="hidden"
           whileInView="visible"
@@ -271,8 +263,8 @@ function Home({ onBookClick }) {
           <span className="section-subtitle">Testimonios /</span>
           <h2 className="section-title">Lo Que Dicen Nuestros Pacientes</h2>
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           className="testimonials-grid"
           initial="hidden"
           whileInView="visible"
@@ -296,7 +288,7 @@ function Home({ onBookClick }) {
               </div>
             </div>
           </motion.div>
-          
+
           <motion.div variants={fadeInUp} className="testimonial-card">
             <div className="stars">
               <Star size={16} fill="#FFC107" color="#FFC107" />
@@ -314,7 +306,7 @@ function Home({ onBookClick }) {
               </div>
             </div>
           </motion.div>
-          
+
           <motion.div variants={fadeInUp} className="testimonial-card">
             <div className="stars">
               <Star size={16} fill="#FFC107" color="#FFC107" />
@@ -336,7 +328,7 @@ function Home({ onBookClick }) {
       </section>
 
       {/* CTA Section */}
-      <motion.section 
+      <motion.section
         className="cta-section"
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -346,15 +338,15 @@ function Home({ onBookClick }) {
         <div className="cta-content">
           <h2>¿Listo para una sonrisa más saludable?</h2>
           <p>Agenda tu cita hoy mismo y descubre la diferencia de una atención dental de excelencia y compasiva.</p>
-          <motion.button 
+          <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="btn-primary" 
-            style={{ backgroundColor: 'var(--teal)', color: 'white', margin: '32px auto 0', border: 'none', padding: '16px 32px', fontSize: '16px' }}
-            onClick={onBookClick}
+            className="btn-primary"
+            style={{ backgroundColor: '#25D366', color: 'white', margin: '32px auto 0', border: 'none', padding: '16px 36px', fontSize: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
+            onClick={() => onBookClick && onBookClick('¡Hola NovaDent! Deseo solicitar una cita de evaluación dental. ¿Cuáles son los horarios disponibles?')}
           >
-            RESERVAR CITA
-            <ArrowRight size={18} style={{ marginLeft: '4px' }} />
+            <FaWhatsapp size={22} />
+            <span>AGENDAR CITA POR WHATSAPP</span>
           </motion.button>
         </div>
       </motion.section>
